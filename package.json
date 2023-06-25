@@ -1,0 +1,30 @@
+{
+  "name": "btube",
+  "version": "1.0.0",
+  "description": "solution for watching vido\u001b[2~\u001b[2eo\u001b[D\u001b[2~\u001b[D\u001b[2~eo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon babel-node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yjh9401/btube-reloaded.git"
+  },
+  "author": "yjh9401",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yjh9401/btube-reloaded/issues"
+  },
+  "homepage": "https://github.com/yjh9401/btube-reloaded#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/node": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "nodemon": "^2.0.22"
+  },
+  "type": "module"
+}
