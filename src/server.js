@@ -8,6 +8,9 @@ const app=express();
 const port=80;
 const logger=morgan("combined");
 
+console.log('process.cwd() ::: %s', process.cwd());
+app.set('views', process.cwd()+'/src/views');
+app.set('view engine', 'pug');
 app.use(logger);
 
 app.use('/', globalRouter);
