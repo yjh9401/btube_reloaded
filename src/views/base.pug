@@ -4,18 +4,9 @@ html(lang="ko")
         title Btube | #{pageTitle}
         link(rel="stylesheet" href="https://unpkg.com/mvp.css")
     body
-        header unpkg header
-            if mockUser.loggedIn
-                small Hello #{mockUser.username}
-            nav
-                ul
-                    if mockUser.loggedIn
-                        li
-                            a(href="/login") Log out
-                    else
-                        li
-                            a(href="/login") Log in
+        header
+            block login
             h1=pageTitle
         main
-            block content //content는 확장 시 사용
+            block content
     include partials/footer.pug

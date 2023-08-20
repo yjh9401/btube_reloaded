@@ -2,8 +2,8 @@ const mockUser={
     username:"bnb",
     loggedIn:true
 }
-const videos=[];
-/*
+//const videos=[];
+
 const videos=[
     {
         title: "first video",
@@ -30,17 +30,29 @@ const videos=[
         id: 3
     },
 ]; //mock up data 만들기, array의 특징 length를 가진다
-*/
-export const trendings = (req, res) => res.render("home", { pageTitle : "Home", mockUser, videos });
-export const search = (req, res) => res.send("search video!! {videoController}");
 
+export const trendings = (req, res) => {
+    res.render("home", { pageTitle : "Home", mockUser, videos });
+}
+export const watch = (req, res) => {
+    const {id}=req.params;
+    console.log(`id ::: ${id}`)
+    const video=videos[id-1]
+    res.render('watch', {pageTitle:"Watch",video:video});
+}
+export const getEdit = (req, res) => {
+    const {id}=req.params;
+    console.log(`id ::: ${id}`)
+    const video=videos[id-1]
+    res.render('edit', {pageTitle:"Edit",video:video});
+}
+export const postEdit = (req, res) => {
+    const {id}=req.params;
+    console.log(`id ::: ${id}`)
+    const {title}=req.body;
+    console.log(`title ::: ${title}`)
+    const video=videos[id-1]
+    videos[id-1].title=title;
+    return res.redirect(`/videos/${id}`);
+}
 export const upload = (req, res) => res.send("videos upload!!! {videoController}");
-export const see = (req, res) => {
-    res.send(`videos ${req.params.id} see!!! {videoController}`);
-}
-export const edit = (req, res) => {
-    res.send(`videos ${req.params.id} edit!!! {videoController}`);
-}
-export const remove = (req, res) => {
-    res.send(`videos ${req.params.id} remove!!! {videoController}`);
-}
